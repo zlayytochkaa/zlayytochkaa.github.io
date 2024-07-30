@@ -8,17 +8,28 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
     .then(response => {
-        console.log(response);
+        console.log(response);  // Отладка: выводим полный ответ
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         return response.json();
     })
     .then(data => {
-        console.log(data);
+        console.log(data);  // Отладка: выводим сырые данные
         const greeting = document.getElementById('greeting');
         const name = data.fullname || data.username;
         greeting.innerText += ` ${name}`;
     })
     .catch(error => console.error('Error:', error));
+
+    document.getElementById('founder-button').addEventListener('click', () => {
+        document.getElementById('initial-screen').classList.add('hidden');
+        document.getElementById('founder-form').classList.remove('hidden');
+    });
+
+    document.getElementById('back-to-roles').addEventListener('click', (event) => {
+        event.preventDefault();
+        document.getElementById('founder-form').classList.add('hidden');
+        document.getElementById('initial-screen').classList.remove('hidden');
+    });
 });

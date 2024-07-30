@@ -13,6 +13,10 @@ body {
     text-align: center;
 }
 
+.hidden {
+    display: none;
+}
+
 #buttons {
     display: flex;
     flex-direction: column;
@@ -30,4 +34,28 @@ body {
     cursor: pointer;
     width: 100%;
     max-width: 300px;
+}
+
+.form-field {
+    text-align: left;
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    background-color: rgb(35,46,60);
+    color: white;
+}
+
+.link {
+    color: rgb(35,46,60);
+    cursor: pointer;
+    text-decoration: none;
 }
