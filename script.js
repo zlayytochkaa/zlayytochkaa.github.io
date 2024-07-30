@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const userId = urlParams.get('user_id');
 
-    fetch(`https://89a1-31-129-105-188.ngrok-free.app/user/${userId}`)
+    fetch(`https://dfa9-31-129-105-188.ngrok-free.app/user/${userId}`)
         .then(response => response.json())
         .then(data => {
             const greeting = document.getElementById('greeting');
