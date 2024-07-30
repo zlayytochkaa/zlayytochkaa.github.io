@@ -46,8 +46,8 @@ body {
 
 .input-field {
     width: 100%;
-    padding: 15px 20px;
-    border-radius: 20px;
+    padding: 12px 25px;
+    border-radius: 16px;
     border: none;
     font-size: 16px;
     background-color: rgb(35,46,60);
@@ -71,5 +71,5 @@ body {
 }
 
 #founder-form h4 {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
