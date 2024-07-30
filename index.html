@@ -12,8 +12,8 @@
             <h1 id="greeting">Здравствуйте, </h1>
             <h3>Выберите то, кем вы являетесь</h3>
             <div id="buttons">
-                <button class="role-button" id="founder-button">Фаундер</button>
-                <button class="role-button" id="developer-button">Разработчик</button>
+                <button class="default-button" id="founder-button">Фаундер</button>
+                <button class="default-button" id="developer-button">Разработчик</button>
             </div>
         </div>
         <div id="founder-form" class="hidden">
@@ -31,15 +31,18 @@
                 <input type="text" id="project-links" class="input-field">
             </div>
             <div class="form-field">
+                <h4>Команда, название и участники</h4>
+                <input type="text" id="team-info" class="input-field">
+            </div>
+            <div class="form-field">
                 <h4>Будете ли вы создавать ивенты?</h4>
-                <label>
+                <label class="checkbox-label">
                     <input type="checkbox" id="create-events">
                     Да, будем
                 </label>
             </div>
             <div class="form-field">
-                <h4>Команда, название и участники</h4>
-                <input type="text" id="team-info" class="input-field">
+                <button class="default-button" id="confirm-role-button">Сохранить</button>
             </div>
             <h4><a href="#" id="back-to-roles" class="link">Вернуться к выбору роли</a></h4>
         </div>

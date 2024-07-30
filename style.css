@@ -24,12 +24,12 @@ body {
     align-items: center;
 }
 
-.role-button {
+.default-button {
     background-color: rgb(35,46,60);
     color: rgb(200, 200, 200);
     border: none;
     padding: 15px 20px;
-    border-radius: 5px;
+    border-radius: 20px;
     font-size: 20px;
     cursor: pointer;
     width: 100%;
@@ -46,16 +46,30 @@ body {
 
 .input-field {
     width: 100%;
-    padding: 15px 15px;
-    border-radius: 5px;
+    padding: 15px 20px;
+    border-radius: 20px;
     border: none;
     font-size: 16px;
     background-color: rgb(35,46,60);
     color: rgb(200, 200, 200);
+    box-sizing: border-box;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: rgb(200, 200, 200);
+    margin-bottom: 12px;
 }
 
 .link {
     color: rgb(60, 72, 88);
     cursor: pointer;
     text-decoration: none;
+}
+
+#founder-form h4 {
+    margin-bottom: 8px;
 }
