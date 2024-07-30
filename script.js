@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
     .then(response => {
-        console.log(response);  // Отладка: выводим полный ответ
+        console.log(response); 
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         return response.json();
     })
     .then(data => {
-        console.log(data);  // Отладка: выводим сырые данные
+        console.log(data);
         const greeting = document.getElementById('greeting');
         const name = data.fullname || data.username;
         greeting.innerText += ` ${name}`;
