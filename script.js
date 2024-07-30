@@ -27,9 +27,20 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('founder-form').classList.remove('hidden');
     });
 
+    document.getElementById('developer-button').addEventListener('click', () => {
+        document.getElementById('initial-screen').classList.add('hidden');
+        document.getElementById('developer-form').classList.remove('hidden');
+    });
+
     document.getElementById('back-to-roles').addEventListener('click', (event) => {
         event.preventDefault();
         document.getElementById('founder-form').classList.add('hidden');
+        document.getElementById('initial-screen').classList.remove('hidden');
+    });
+
+    document.getElementById('back-to-roles-developer').addEventListener('click', (event) => {
+        event.preventDefault();
+        document.getElementById('developer-form').classList.add('hidden');
         document.getElementById('initial-screen').classList.remove('hidden');
     });
 });
