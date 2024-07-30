@@ -24,10 +24,10 @@ body {
     background-color: rgb(35,46,60);
     color: white;
     border: none;
-    padding: 25px 20px;
+    padding: 15px 20px;
     border-radius: 5px;
     font-size: 20px;
     cursor: pointer;
-    width: 200%;
-    max-width: 500px;
+    width: 100%;
+    max-width: 300px;
 }
