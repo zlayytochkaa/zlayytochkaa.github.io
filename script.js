@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const userId = urlParams.get('user_id');
 
-    fetch(`http://192.168.0.226:5000/user/${userId}`)
+    fetch(`http://31.129.105.188:5000/user/${userId}`)
         .then(response => response.json())
         .then(data => {
             const greeting = document.getElementById('greeting');
