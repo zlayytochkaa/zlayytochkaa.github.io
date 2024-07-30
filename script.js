@@ -1,13 +1,13 @@
-function getQueryParam(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-    const userId = getQueryParam('user_id');
-    if (userId) {
-        document.getElementById('user-id').innerText += userId;
-    } else {
-        document.getElementById('user-id').innerText = "user_id не найден";
-    }
+    const urlParams = new URLSearchParams(window.location.search);
+    const userId = urlParams.get('user_id');
+
+    fetch(`https://your-backend-endpoint/user/${userId}`)
+        .then(response => response.json())
+        .then(data => {
+            const greeting = document.getElementById('greeting');
+            const name = data.fullname || data.username;
+            greeting.innerText += name;
+        })
+        .catch(error => console.error('Error:', error));
 });
