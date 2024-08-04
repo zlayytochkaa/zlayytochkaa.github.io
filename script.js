@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const userId = urlParams.get('user_id');
 
-    fetch(`https://cbbe-31-129-105-188.ngrok-free.app/user/${userId}`, {
+    fetch(`https://91ad-31-129-105-188.ngrok-free.app/user/${userId}`, {
         headers: {
             'ngrok-skip-browser-warning': 'true'
         }
