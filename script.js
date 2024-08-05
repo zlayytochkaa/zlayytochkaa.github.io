@@ -13,39 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
             alert(data.error);
             return;
         }
+
         const name = data.fullname || data.username;
-        document.getElementById('greeting').innerText += ` ${name}`;
-        
+        const greeting = document.getElementById('greeting');
+        greeting.innerText = `Здравствуйте, ${name}`;
+
         if (data.profile) {
             document.getElementById('main-menu').classList.remove('hidden');
-            document.getElementById('initial-screen').classList.add('hidden');
         } else {
             document.getElementById('initial-screen').classList.remove('hidden');
         }
     })
     .catch(error => console.error('Error:', error));
-
-    document.getElementById('founder-button').addEventListener('click', () => {
-        document.getElementById('initial-screen').classList.add('hidden');
-        document.getElementById('founder-form').classList.remove('hidden');
-    });
-
-    document.getElementById('developer-button').addEventListener('click', () => {
-        document.getElementById('initial-screen').classList.add('hidden');
-        document.getElementById('developer-form').classList.remove('hidden');
-    });
-
-    document.getElementById('back-to-roles').addEventListener('click', (event) => {
-        event.preventDefault();
-        document.getElementById('founder-form').classList.add('hidden');
-        document.getElementById('initial-screen').classList.remove('hidden');
-    });
-
-    document.getElementById('back-to-roles-developer').addEventListener('click', (event) => {
-        event.preventDefault();
-        document.getElementById('developer-form').classList.add('hidden');
-        document.getElementById('initial-screen').classList.remove('hidden');
-    });
 
     const validateFields = (fields) => {
         let valid = true;
@@ -114,6 +93,28 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(error => console.error('Error:', error));
     };
+
+    document.getElementById('founder-button').addEventListener('click', () => {
+        document.getElementById('initial-screen').classList.add('hidden');
+        document.getElementById('founder-form').classList.remove('hidden');
+    });
+
+    document.getElementById('developer-button').addEventListener('click', () => {
+        document.getElementById('initial-screen').classList.add('hidden');
+        document.getElementById('developer-form').classList.remove('hidden');
+    });
+
+    document.getElementById('back-to-roles').addEventListener('click', (event) => {
+        event.preventDefault();
+        document.getElementById('founder-form').classList.add('hidden');
+        document.getElementById('initial-screen').classList.remove('hidden');
+    });
+
+    document.getElementById('back-to-roles-developer').addEventListener('click', (event) => {
+        event.preventDefault();
+        document.getElementById('developer-form').classList.add('hidden');
+        document.getElementById('initial-screen').classList.remove('hidden');
+    });
 
     document.getElementById('faunder-confirm-button').addEventListener('click', () => {
         saveProfile('faunder');
