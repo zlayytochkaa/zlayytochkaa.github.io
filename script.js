@@ -2,17 +2,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const data = Object.fromEntries(urlParams.entries());
 
-    fetch(`https://7ef6-31-129-105-188.ngrok-free.app/user?${urlParams.toString()}`)
-        .then(response => response.json())
-        .then(data => {
-            if (data.error) {
-                alert(data.error);
-                return;
-            }
-            const name = data.fullname || data.username;
-            document.getElementById('greeting').innerText += ` ${name}`;
-        })
-        .catch(error => console.error('Error:', error));
+    fetch(`https://7ef6-31-129-105-188.ngrok-free.app/user?${urlParams.toString()}`, {
+        headers: {
+            'ngrok-skip-browser-warning': 'true'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert(data.error);
+            return;
+        }
+        const name = data.fullname || data.username;
+        document.getElementById('greeting').innerText += ` ${name}`;
+    })
+    .catch(error => console.error('Error:', error));
 
     document.getElementById('founder-button').addEventListener('click', () => {
         document.getElementById('initial-screen').classList.add('hidden');
