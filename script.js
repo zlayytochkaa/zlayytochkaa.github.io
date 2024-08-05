@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const data = Object.fromEntries(urlParams.entries());
 
-    fetch(`https://e245-31-129-105-188.ngrok-free.app/user?${urlParams.toString()}`, {
+    fetch(`https://6f50-31-129-105-188.ngrok-free.app/user?${urlParams.toString()}`, {
         headers: {
             'ngrok-skip-browser-warning': 'true'
         }
