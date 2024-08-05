@@ -41,20 +41,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const saveProfile = (profileType) => {
+        let first, second, third, fourth, fifth;
+
+        if (profileType === 'faunder') {
+            first = document.getElementById('faunder-project-name').value;
+            second = document.getElementById('faunder-achievements').value;
+            third = document.getElementById('faunder-project-links').value;
+            fourth = document.getElementById('faunder-team-info').value;
+            fifth = document.getElementById('faunder-create-events').checked ? "Да, буду" : "Нет";
+        } else if (profileType === 'developer') {
+            first = document.getElementById('developer-achievements').value;
+            second = document.getElementById('developer-teams').value;
+            third = document.getElementById('developer-languages').value;
+            fourth = document.getElementById('developer-need-team').value;
+            fifth = document.getElementById('developer-job-offers').value;
+        }
+
         const profileData = {
             id: urlParams.get('id'),
             profile: profileType,
-            first: document.getElementById(`${profileType}-project-name`).value || document.getElementById(`${profileType}-achievements`).value,
-            second: document.getElementById(`${profileType}-project-links`).value || document.getElementById(`${profileType}-teams`).value,
-            third: document.getElementById(`${profileType}-team-info`).value || document.getElementById(`${profileType}-languages`).value,
-            fourth: document.getElementById(`${profileType}-create-events`) ? document.getElementById(`${profileType}-create-events`).checked : document.getElementById(`${profileType}-need-team`).value,
-            fifth: document.getElementById(`${profileType}-job-offers`).value
+            first: first,
+            second: second,
+            third: third,
+            fourth: fourth,
+            fifth: fifth
         };
 
-        fetch('https://your-ngrok-url/save_profile', {
+        fetch('https://4cc5-31-129-105-188.ngrok-free.app/save_profile', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'ngrok-skip-browser-warning': 'true'
             },
             body: JSON.stringify(profileData)
         })
