@@ -15,14 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const name = data.fullname || data.username;
-        const greeting = document.getElementById('greeting');
-        greeting.innerText = `Здравствуйте, ${name}`;
+        document.getElementById('greeting').innerText = `Здравствуйте, ${name}`;
 
         if (data.profile) {
             document.getElementById('main-menu').classList.remove('hidden');
         } else {
             document.getElementById('initial-screen').classList.remove('hidden');
         }
+        
+        document.getElementById('loading-screen').classList.add('hidden');
     })
     .catch(error => console.error('Error:', error));
 
