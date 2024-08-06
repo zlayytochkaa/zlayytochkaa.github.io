@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const data = Object.fromEntries(urlParams.entries());
 
-    fetch(`https://2b2d-31-129-105-188.ngrok-free.app/user?${urlParams.toString()}`, {
+    fetch(`https://e1da-31-129-105-188.ngrok-free.app/user?${urlParams.toString()}`, {
         headers: {
             'ngrok-skip-browser-warning': 'true'
         }
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
             fifth: fifth
         };
 
-        fetch('https://2b2d-31-129-105-188.ngrok-free.app/save_profile', {
+        fetch('https://e1da-31-129-105-188.ngrok-free.app/save_profile', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
