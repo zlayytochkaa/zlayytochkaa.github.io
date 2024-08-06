@@ -19,10 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (data.profile) {
             document.getElementById('main-menu').classList.remove('hidden');
+            if (data.profile === 'faunder') {
+                document.getElementById('create-broadcast-button').classList.remove('hidden');
+            }
         } else {
             document.getElementById('initial-screen').classList.remove('hidden');
         }
-        
+
         document.getElementById('loading-screen').classList.add('hidden');
     })
     .catch(error => console.error('Error:', error));
@@ -31,10 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
         let valid = true;
         fields.forEach(field => {
             if (!field.value.trim()) {
-                field.style.borderColor = 'rgb(255,100,100)';
+                field.classList.add('error');
                 valid = false;
             } else {
-                field.style.borderColor = '';
+                field.classList.remove('error');
             }
         });
         return valid;

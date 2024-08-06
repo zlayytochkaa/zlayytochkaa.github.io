@@ -82,3 +82,10 @@ body {
 #developer-job-offers {
     margin-bottom: 24px;
 }
+
+#menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
