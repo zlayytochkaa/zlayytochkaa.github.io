@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const data = Object.fromEntries(urlParams.entries());
+    let userProfile;
 
     fetch(`https://e1da-31-129-105-188.ngrok-free.app/user?${urlParams.toString()}`, {
         headers: {
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const name = data.fullname || data.username;
+        userProfile = data.profile;
         document.getElementById('greeting').innerText = `Здравствуйте, ${name}`;
 
         if (data.profile) {
@@ -135,7 +137,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById('profile-button').addEventListener('click', () => {
-        document.getElementById('header-text').innerText = 'Профиль';
+        document.getElementById('header-text').innerText = userProfile === 'faunder' ? 'Фаундер' : 'Разработчик';
+        document.getElementById('header').classList.add('highlight');
+        document.getElementById('return-button-container').classList.remove('hidden');
     });
 
     document.getElementById('events-button').addEventListener('click', () => {
@@ -152,5 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('return-button').addEventListener('click', () => {
         document.getElementById('header-text').innerText = 'Главное меню';
+        document.getElementById('header').classList.remove('highlight');
+        document.getElementById('return-button-container').classList.add('hidden');
     });
 });

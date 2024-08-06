@@ -39,13 +39,19 @@ body {
 }
 
 #header {
-    background-color: rgb(220, 200, 20);
+    background-color: rgb(35, 46, 60);
     padding: 20px;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    color: rgb(220, 220, 220);
+}
+
+#header.highlight {
+    background-color: rgb(220, 200, 20);
+    color: rgb(23, 33, 43);
 }
 
 #header-text {
@@ -61,12 +67,18 @@ body {
     display: flex;
     justify-content: center;
     padding: 20px;
+    background-color: rgb(35, 46, 60);
+    color: rgb(220, 220, 220);
+}
+
+#return-button-container.highlight {
     background-color: rgb(220, 200, 20);
+    color: rgb(23, 33, 43);
 }
 
 #return-button {
-    background-color: rgb(220, 200, 20);
-    color: rgb(23, 33, 43);
+    background-color: transparent;
+    color: inherit;
     border: none;
     padding: 15px 20px;
     border-radius: 20px;
