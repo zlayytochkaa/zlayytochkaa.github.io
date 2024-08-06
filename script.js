@@ -19,9 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (data.profile) {
             document.getElementById('main-menu').classList.remove('hidden');
-            if (data.profile === 'faunder') {
-                document.getElementById('create-broadcast-button').classList.remove('hidden');
-            }
         } else {
             document.getElementById('initial-screen').classList.remove('hidden');
         }
@@ -34,10 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
         let valid = true;
         fields.forEach(field => {
             if (!field.value.trim()) {
-                field.classList.add('error');
+                field.style.borderColor = 'rgb(255,100,100)';
                 valid = false;
             } else {
-                field.classList.remove('error');
+                field.style.borderColor = '';
             }
         });
         return valid;
@@ -94,9 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('founder-form').classList.add('hidden');
             document.getElementById('developer-form').classList.add('hidden');
             document.getElementById('main-menu').classList.remove('hidden');
-            if (profileType === 'faunder') {
-                document.getElementById('create-broadcast-button').classList.remove('hidden');
-            }
         })
         .catch(error => console.error('Error:', error));
     };
