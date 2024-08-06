@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
             fifth: fifth
         };
 
-        fetch('https://e1da-31-129-105-188.ngrok-free.app/save_profile', {
+        fetch('https://2b2d-31-129-105-188.ngrok-free.app/save_profile', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -140,6 +140,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('header-text').innerText = userProfile === 'faunder' ? 'Фаундер' : 'Разработчик';
         document.getElementById('header').classList.add('highlight');
         document.getElementById('return-button-container').classList.remove('hidden');
+        document.getElementById('main-menu').classList.add('hidden');
+        document.getElementById('profile-section').classList.remove('hidden');
     });
 
     document.getElementById('events-button').addEventListener('click', () => {
@@ -158,5 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('header-text').innerText = 'Главное меню';
         document.getElementById('header').classList.remove('highlight');
         document.getElementById('return-button-container').classList.add('hidden');
+        document.getElementById('main-menu').classList.remove('hidden');
+        document.getElementById('profile-section').classList.add('hidden');
     });
 });

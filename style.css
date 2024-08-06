@@ -47,11 +47,12 @@ body {
     left: 0;
     right: 0;
     color: rgb(220, 220, 220);
+    text-align: center;
 }
 
 #header.highlight {
     background-color: rgb(220, 200, 20);
-    color: rgb(23, 33, 43);
+    color: rgb(220, 220, 220);
 }
 
 #header-text {
@@ -71,11 +72,6 @@ body {
     color: rgb(220, 220, 220);
 }
 
-#return-button-container.highlight {
-    background-color: rgb(220, 200, 20);
-    color: rgb(23, 33, 43);
-}
-
 #return-button {
     background-color: transparent;
     color: inherit;
@@ -84,4 +80,8 @@ body {
     border-radius: 20px;
     font-size: 24px;
     cursor: pointer;
+}
+
+#profile-section {
+    margin-top: 80px;
 }
