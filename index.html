@@ -11,6 +11,9 @@
         <div id="loading-screen">
             <h1>Загрузка...</h1>
         </div>
+        <div id="header" class="hidden">
+            <h1 id="header-text">Главное меню</h1>
+        </div>
         <div id="initial-screen" class="hidden">
             <h1 id="greeting">Здравствуйте, </h1>
             <h3>Выберите то, кем вы являетесь</h3>
@@ -77,13 +80,15 @@
             <h4><a href="#" id="back-to-roles-developer" class="link">Вернуться к выбору роли</a></h4>
         </div>
         <div id="main-menu" class="hidden">
-            <h1>Главное меню</h1>
             <div id="menu-buttons">
-                <button class="default-button">Профиль</button>
-                <button class="default-button">Ивенты</button>
-                <button class="default-button">Поиск команды</button>
+                <button class="default-button" id="profile-button">Профиль</button>
+                <button class="default-button" id="events-button">Ивенты</button>
+                <button class="default-button" id="team-search-button">Поиск команды</button>
                 <button class="default-button hidden" id="create-broadcast-button">Создать рассылку</button>
             </div>
+        </div>
+        <div id="return-button-container" class="hidden">
+            <button id="return-button">Вернуться</button>
         </div>
     </div>
     <script src="script.js"></script>

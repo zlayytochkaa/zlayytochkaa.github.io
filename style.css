@@ -7,10 +7,12 @@ body {
     align-items: center;
     color: rgb(220, 220, 220);
     font-family: Arial, sans-serif;
+    overflow: hidden;
 }
 
 #app {
     text-align: center;
+    width: 100%;
 }
 
 .hidden {
@@ -36,49 +38,38 @@ body {
     max-width: 300px;
 }
 
-.form-field {
-    text-align: left;
-    margin-bottom: 16px;
+#header {
+    background-color: rgb(220, 200, 20);
+    padding: 20px;
     width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
-.input-field {
-    width: 100%;
-    padding: 12px 25px;
-    border-radius: 16px;
-    border: 2px solid rgb(35,46,60);
-    font-size: 16px;
-    background-color: rgb(35,46,60);
-    color: rgb(220, 220, 220);
-    box-sizing: border-box;
+#header-text {
+    margin: 0;
+    font-size: 24px;
 }
 
-.input-field.error {
-    border-color: rgb(255, 100, 100);
-}
-
-.checkbox-label {
+#return-button-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 16px;
-    color: rgb(220, 220, 220);
-    margin-bottom: 24px;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgb(220, 200, 20);
 }
 
-.link {
-    color: rgb(60, 72, 88);
+#return-button {
+    background-color: rgb(220, 200, 20);
+    color: rgb(23, 33, 43);
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-size: 24px;
     cursor: pointer;
-    text-decoration: none;
-}
-
-#founder-form h4, #developer-form h4 {
-    margin-bottom: 6px;
-    margin-top: 14px;
-}
-
-#developer-job-offers {
-    margin-bottom: 24px;
 }

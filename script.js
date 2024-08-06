@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (data.profile) {
             document.getElementById('main-menu').classList.remove('hidden');
+            document.getElementById('header-text').innerText = "Главное меню";
+            document.getElementById('header').classList.remove('hidden');
             if (data.profile === 'faunder') {
                 document.getElementById('create-broadcast-button').classList.remove('hidden');
             }
@@ -74,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
             second: second.value,
             third: third.value,
             fourth: fourth.value,
-            fifth: fifth.value
+            fifth: fifth
         };
 
         fetch('https://e1da-31-129-105-188.ngrok-free.app/save_profile', {
@@ -94,6 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('founder-form').classList.add('hidden');
             document.getElementById('developer-form').classList.add('hidden');
             document.getElementById('main-menu').classList.remove('hidden');
+            document.getElementById('header').classList.remove('hidden');
             if (profileType === 'faunder') {
                 document.getElementById('create-broadcast-button').classList.remove('hidden');
             }
@@ -129,5 +132,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('developer-confirm-button').addEventListener('click', () => {
         saveProfile('developer');
+    });
+
+    document.getElementById('profile-button').addEventListener('click', () => {
+        document.getElementById('header-text').innerText = 'Профиль';
+    });
+
+    document.getElementById('events-button').addEventListener('click', () => {
+        document.getElementById('header-text').innerText = 'Ивенты';
+    });
+
+    document.getElementById('team-search-button').addEventListener('click', () => {
+        document.getElementById('header-text').innerText = 'Поиск команды';
+    });
+
+    document.getElementById('create-broadcast-button').addEventListener('click', () => {
+        document.getElementById('header-text').innerText = 'Создать рассылку';
+    });
+
+    document.getElementById('return-button').addEventListener('click', () => {
+        document.getElementById('header-text').innerText = 'Главное меню';
     });
 });
