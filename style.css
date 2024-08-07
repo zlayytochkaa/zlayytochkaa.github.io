@@ -14,7 +14,7 @@ body {
     background-color: rgb(35, 46, 60);
     width: 100%;
     text-align: center;
-    padding: 15px 0;
+    padding: 10px 0;
 }
 
 #app {
@@ -29,11 +29,27 @@ body {
     display: none;
 }
 
-#buttons, #menu-buttons {
+#buttons {
     display: flex;
     flex-direction: column;
     gap: 16px;
     align-items: center;
+}
+
+#menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: center; /* Добавить */
+    height: 100vh;
+}
+
+#main-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Добавить */
 }
 
 .default-button {
@@ -102,4 +118,10 @@ body {
     text-align: center;
     position: fixed;
     bottom: 0;
+    left: 0;  /* Добавить */
+    right: 0;  /* Добавить */
+}
+
+#return-button {
+    margin: 0 auto; /* Центрирование кнопки */
 }
