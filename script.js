@@ -1,30 +1,55 @@
 document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const data = Object.fromEntries(urlParams.entries());
-    fetch(`https://e1da-31-129-105-188.ngrok-free.app/user?${urlParams.toString()}`, {
-        headers: {
-            'ngrok-skip-browser-warning': 'true'
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.error) {
-            alert(data.error);
-            return;
-        }
-        const name = data.fullname || data.username;
-        document.getElementById('greeting').innerText = `Здравствуйте, ${name}`;
-        if (data.profile) {
-            document.getElementById('main-menu').classList.remove('hidden');
-            if (data.profile === 'faunder') {
-                document.getElementById('create-broadcast-button').classList.remove('hidden');
+    const updateProfileHeader = () => {
+        fetch(`https://e1da-31-129-105-188.ngrok-free.app/user?${urlParams.toString()}`, {
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
             }
-        } else {
-            document.getElementById('initial-screen').classList.remove('hidden');
-        }
-        document.getElementById('loading-screen').classList.add('hidden');
-    })
-    .catch(error => console.error('Error:', error));
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert(data.error);
+                return;
+            }
+            const profileHeader = document.getElementById('profile-header');
+            if (data.profile === 'faunder') {
+                profileHeader.innerText = 'Фаундер';
+            } else if (data.profile === 'developer') {
+                profileHeader.innerText = 'Разработчик';
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    };
+    const initialLoad = () => {
+        fetch(`https://e1da-31-129-105-188.ngrok-free.app/user?${urlParams.toString()}`, {
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert(data.error);
+                return;
+            }
+            const name = data.fullname || data.username;
+            document.getElementById('greeting').innerText = `Здравствуйте, ${name}`;
+            if (data.profile) {
+                document.getElementById('main-menu').classList.remove('hidden');
+                if (data.profile === 'faunder') {
+                    document.getElementById('create-broadcast-button').classList.remove('hidden');
+                }
+            } else {
+                document.getElementById('initial-screen').classList.remove('hidden');
+            }
+            document.getElementById('loading-screen').classList.add('hidden');
+        })
+        .catch(error => console.error('Error:', error));
+        updateProfileHeader();
+    };
+    initialLoad();
     const validateFields = (fields) => {
         let valid = true;
         fields.forEach(field => {
@@ -89,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
         .catch(error => console.error('Error:', error));
+        updateProfileHeader();
     };
     document.getElementById('founder-button').addEventListener('click', () => {
         document.getElementById('initial-screen').classList.add('hidden');
@@ -115,5 +141,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('open-profile-button').addEventListener('click', () => {
         document.getElementById('main-menu').classList.add('hidden');
         document.getElementById('profile-menu').classList.remove('hidden');
+    });
+    document.getElementById('comeback-button').addEventListener('click', () => {
+        document.getElementById('main-menu').classList.remove('hidden');
+        document.getElementById('profile-menu').classList.add('hidden');
     });
 });
