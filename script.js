@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('profile-button').addEventListener('click', () => {
         document.getElementById('main-menu').classList.add('hidden');
         const role = data.profile === 'faunder' ? 'Фаундер' : 'Разработчик';
-        document.getElementById('role-header').innerText = role;
+        document.getElementById('header').innerText = role;
         document.getElementById('profile-section').classList.remove('hidden');
         document.getElementById('header').innerText = role;
         document.getElementById('return-button-container').classList.remove('hidden');
