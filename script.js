@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const data = Object.fromEntries(urlParams.entries());
-    let userProfile;
-
     fetch(`https://e1da-31-129-105-188.ngrok-free.app/user?${urlParams.toString()}`, {
         headers: {
             'ngrok-skip-browser-warning': 'true'
@@ -14,26 +12,19 @@ document.addEventListener("DOMContentLoaded", () => {
             alert(data.error);
             return;
         }
-
         const name = data.fullname || data.username;
-        userProfile = data.profile;
         document.getElementById('greeting').innerText = `Здравствуйте, ${name}`;
-
         if (data.profile) {
             document.getElementById('main-menu').classList.remove('hidden');
-            document.getElementById('header-text').innerText = "Главное меню";
-            document.getElementById('header').classList.remove('hidden');
             if (data.profile === 'faunder') {
                 document.getElementById('create-broadcast-button').classList.remove('hidden');
             }
         } else {
             document.getElementById('initial-screen').classList.remove('hidden');
         }
-
         document.getElementById('loading-screen').classList.add('hidden');
     })
     .catch(error => console.error('Error:', error));
-
     const validateFields = (fields) => {
         let valid = true;
         fields.forEach(field => {
@@ -46,11 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         return valid;
     };
-
     const saveProfile = (profileType) => {
         let first, second, third, fourth, fifth;
         let valid = true;
-
         if (profileType === 'faunder') {
             first = document.getElementById('faunder-project-name');
             second = document.getElementById('faunder-achievements');
@@ -66,11 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
             fifth = document.getElementById('developer-job-offers');
             valid = validateFields([first, second, third, fourth, fifth]);
         }
-
         if (!valid) {
             return;
         }
-
         const profileData = {
             id: urlParams.get('id'),
             profile: profileType,
@@ -78,10 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
             second: second.value,
             third: third.value,
             fourth: fourth.value,
-            fifth: fifth
+            fifth: fifth.value
         };
-
-        fetch('https://2b2d-31-129-105-188.ngrok-free.app/save_profile', {
+        fetch('https://e1da-31-129-105-188.ngrok-free.app/save_profile', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -98,59 +84,34 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('founder-form').classList.add('hidden');
             document.getElementById('developer-form').classList.add('hidden');
             document.getElementById('main-menu').classList.remove('hidden');
-            document.getElementById('header').classList.remove('hidden');
             if (profileType === 'faunder') {
                 document.getElementById('create-broadcast-button').classList.remove('hidden');
             }
         })
         .catch(error => console.error('Error:', error));
     };
-
     document.getElementById('founder-button').addEventListener('click', () => {
         document.getElementById('initial-screen').classList.add('hidden');
         document.getElementById('founder-form').classList.remove('hidden');
-        document.getElementById('header-text').innerText = "Анкета Фаундера";
-        document.getElementById('header').classList.remove('hidden');
     });
-
     document.getElementById('developer-button').addEventListener('click', () => {
         document.getElementById('initial-screen').classList.add('hidden');
         document.getElementById('developer-form').classList.remove('hidden');
-        document.getElementById('header-text').innerText = "Анкета Разработчика";
-        document.getElementById('header').classList.remove('hidden');
     });
-
+    document.getElementById('back-to-roles').addEventListener('click', (event) => {
+        event.preventDefault();
+        document.getElementById('founder-form').classList.add('hidden');
+        document.getElementById('initial-screen').classList.remove('hidden');
+    });
+    document.getElementById('back-to-roles-developer').addEventListener('click', (event) => {
+        event.preventDefault();
+        document.getElementById('developer-form').classList.add('hidden');
+        document.getElementById('initial-screen').classList.remove('hidden');
+    });
     document.getElementById('faunder-confirm-button').addEventListener('click', () => {
         saveProfile('faunder');
     });
-
     document.getElementById('developer-confirm-button').addEventListener('click', () => {
         saveProfile('developer');
-    });
-
-    document.getElementById('back-to-roles').addEventListener('click', (e) => {
-        e.preventDefault();
-        document.getElementById('founder-form').classList.add('hidden');
-        document.getElementById('initial-screen').classList.remove('hidden');
-        document.getElementById('header').classList.add('hidden');
-    });
-
-    document.getElementById('back-to-roles-developer').addEventListener('click', (e) => {
-        e.preventDefault();
-        document.getElementById('developer-form').classList.add('hidden');
-        document.getElementById('initial-screen').classList.remove('hidden');
-        document.getElementById('header').classList.add('hidden');
-    });
-
-    document.getElementById('return-button').addEventListener('click', () => {
-        document.getElementById('profile-section').classList.add('hidden');
-        document.getElementById('main-menu').classList.remove('hidden');
-        document.getElementById('return-button-container').classList.add('hidden');
-    });
-
-    document.getElementById('profile-button').addEventListener('click', () => {
-        document.getElementById('main-menu').classList.add('hidden');
-        document.getElementById('profile-section').classList.remove('hidden');
-        document.getElementById('return-button-container').classList.remove('hidden');
     });
 });
