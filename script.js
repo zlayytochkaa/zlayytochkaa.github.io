@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const data = Object.fromEntries(urlParams.entries());
     const updateProfileHeader = () => {
-        fetch(`https://e1da-31-129-105-188.ngrok-free.app/user?${urlParams.toString()}`, {
+        fetch(`https://e8e7-31-129-105-188.ngrok-free.app/user?${urlParams.toString()}`, {
             headers: {
                 'ngrok-skip-browser-warning': 'true'
             }
@@ -14,16 +14,41 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
             const profileHeader = document.getElementById('profile-header');
+            const questionsContainer = document.getElementById('questions-container');
+            questionsContainer.innerHTML = '';
+    
             if (data.profile === 'faunder') {
                 profileHeader.innerText = 'Фаундер';
+                questionsContainer.innerHTML = `
+                    <h2>Название проекта</h2>
+                    <h2>Достижения</h2>
+                    <h2>Ссылки на проекты</h2>
+                    <h2>Команда, название и участники</h2>
+                    <h2>Будете ли вы создавать ивенты?</h2>
+                `;
             } else if (data.profile === 'developer') {
                 profileHeader.innerText = 'Разработчик';
+                questionsContainer.innerHTML = `
+                    <h2>Достижения</h2>
+                    <h2>В каких командах вы работали</h2>
+                    <h2>Языки программирования</h2>
+                    <h2>Нуждаетесь ли вы в команде</h2>
+                    <h2>Готовы ли вы рассматривать предложения о работе</h2>
+                `;
             }
+            window.userProfileData = {
+                first: data.first,
+                second: data.second,
+                third: data.third,
+                fourth: data.fourth,
+                fifth: data.fifth
+            };
+    
         })
         .catch(error => console.error('Error:', error));
     };
     const initialLoad = () => {
-        fetch(`https://e1da-31-129-105-188.ngrok-free.app/user?${urlParams.toString()}`, {
+        fetch(`https://e8e7-31-129-105-188.ngrok-free.app/user?${urlParams.toString()}`, {
             headers: {
                 'ngrok-skip-browser-warning': 'true'
             }
@@ -92,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
             fourth: fourth.value,
             fifth: fifth.value
         };
-        fetch('https://e1da-31-129-105-188.ngrok-free.app/save_profile', {
+        fetch('https://e8e7-31-129-105-188.ngrok-free.app/save_profile', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
