@@ -23,6 +23,22 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('initial-screen').classList.remove('hidden');
         }
         document.getElementById('loading-screen').classList.add('hidden');
+
+        document.getElementById('profile-button').addEventListener('click', () => {
+            document.getElementById('main-menu').classList.add('hidden');
+            const role = data.profile === 'faunder' ? 'Фаундер' : 'Разработчик';
+            document.getElementById('role-header').innerText = role;
+            document.getElementById('profile-section').classList.remove('hidden');
+            document.getElementById('header-title').innerText = role;
+            document.getElementById('return-button-container').classList.remove('hidden');
+        });
+        
+        document.getElementById('return-button').addEventListener('click', () => {
+            document.getElementById('profile-section').classList.add('hidden');
+            document.getElementById('main-menu').classList.remove('hidden');
+            document.getElementById('header-title').innerText = 'Главное меню';
+            document.getElementById('return-button-container').classList.add('hidden');
+        });
     })
     .catch(error => console.error('Error:', error));
     
@@ -119,21 +135,5 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('back-to-roles-developer').addEventListener('click', () => {
         document.getElementById('developer-form').classList.add('hidden');
         document.getElementById('initial-screen').classList.remove('hidden');
-    });
-
-    document.getElementById('profile-button').addEventListener('click', () => {
-        document.getElementById('main-menu').classList.add('hidden');
-        const role = data.profile === 'faunder' ? 'Фаундер' : 'Разработчик';
-        document.getElementById('role-header').innerText = role;
-        document.getElementById('profile-section').classList.remove('hidden');
-        document.getElementById('header-title').innerText = role;
-        document.getElementById('return-button-container').classList.remove('hidden');
-    });
-
-    document.getElementById('return-button').addEventListener('click', () => {
-        document.getElementById('profile-section').classList.add('hidden');
-        document.getElementById('main-menu').classList.remove('hidden');
-        document.getElementById('header-title').innerText = 'Главное меню';
-        document.getElementById('return-button-container').classList.add('hidden');
     });
 });

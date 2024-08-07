@@ -57,17 +57,9 @@ body {
     color: rgb(220, 220, 220);
     border: none;
     padding: 15px 20px;
-    border-radius: 20px;
     font-size: 20px;
     cursor: pointer;
     width: 100%;
-    max-width: 300px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    padding: 20px 0;
 }
 
 .form-field {
