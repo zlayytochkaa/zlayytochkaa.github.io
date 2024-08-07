@@ -17,15 +17,31 @@ body {
     display: none;
 }
 
+.header {
+    background-color: rgb(35, 46, 60);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    color: rgb(220, 220, 220);
+}
+
 #buttons, #menu-buttons {
     display: flex;
     flex-direction: column;
     gap: 16px;
     align-items: center;
+    margin-top: 100px; /* Adjusted to account for fixed header */
 }
 
 .default-button {
-    background-color: rgb(35,46,60);
+    background-color: rgb(35, 46, 60);
     color: rgb(220, 220, 220);
     border: none;
     padding: 15px 20px;
@@ -34,6 +50,24 @@ body {
     cursor: pointer;
     width: 100%;
     max-width: 300px;
+}
+
+.return-button {
+    background-color: rgb(35, 46, 60);
+    color: rgb(220, 220, 220);
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 20px 0;
 }
 
 .form-field {
@@ -48,9 +82,9 @@ body {
     width: 100%;
     padding: 12px 25px;
     border-radius: 16px;
-    border: 2px solid rgb(35,46,60);
+    border: 2px solid rgb(35, 46, 60);
     font-size: 16px;
-    background-color: rgb(35,46,60);
+    background-color: rgb(35, 46, 60);
     color: rgb(220, 220, 220);
     box-sizing: border-box;
 }

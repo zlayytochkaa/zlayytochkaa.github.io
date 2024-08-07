@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('loading-screen').classList.add('hidden');
     })
     .catch(error => console.error('Error:', error));
+    
     const validateFields = (fields) => {
         let valid = true;
         fields.forEach(field => {
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         return valid;
     };
+
     const saveProfile = (profileType) => {
         let first, second, third, fourth, fifth;
         let valid = true;
@@ -90,40 +92,48 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(error => console.error('Error:', error));
     };
+
     document.getElementById('founder-button').addEventListener('click', () => {
         document.getElementById('initial-screen').classList.add('hidden');
         document.getElementById('founder-form').classList.remove('hidden');
     });
+
     document.getElementById('developer-button').addEventListener('click', () => {
         document.getElementById('initial-screen').classList.add('hidden');
         document.getElementById('developer-form').classList.remove('hidden');
     });
+
     document.getElementById('faunder-confirm-button').addEventListener('click', () => {
         saveProfile('faunder');
     });
+
     document.getElementById('developer-confirm-button').addEventListener('click', () => {
         saveProfile('developer');
     });
+
     document.getElementById('back-to-roles').addEventListener('click', () => {
         document.getElementById('founder-form').classList.add('hidden');
         document.getElementById('initial-screen').classList.remove('hidden');
     });
+
     document.getElementById('back-to-roles-developer').addEventListener('click', () => {
         document.getElementById('developer-form').classList.add('hidden');
         document.getElementById('initial-screen').classList.remove('hidden');
     });
+
     document.getElementById('profile-button').addEventListener('click', () => {
         document.getElementById('main-menu').classList.add('hidden');
         const role = data.profile === 'faunder' ? 'Фаундер' : 'Разработчик';
         document.getElementById('role-header').innerText = role;
         document.getElementById('profile-section').classList.remove('hidden');
-        document.getElementById('header').innerText = role;
+        document.getElementById('header-title').innerText = role;
         document.getElementById('return-button-container').classList.remove('hidden');
     });
+
     document.getElementById('return-button').addEventListener('click', () => {
         document.getElementById('profile-section').classList.add('hidden');
         document.getElementById('main-menu').classList.remove('hidden');
-        document.getElementById('header').innerText = 'Главное меню';
+        document.getElementById('header-title').innerText = 'Главное меню';
         document.getElementById('return-button-container').classList.add('hidden');
     });
 });
