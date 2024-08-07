@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             second: second.value,
             third: third.value,
             fourth: fourth.value,
-            fifth: fifth.value
+            fifth: fifth
         };
         fetch('https://e1da-31-129-105-188.ngrok-free.app/save_profile', {
             method: 'POST',
@@ -98,20 +98,32 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('initial-screen').classList.add('hidden');
         document.getElementById('developer-form').classList.remove('hidden');
     });
-    document.getElementById('back-to-roles').addEventListener('click', (event) => {
-        event.preventDefault();
-        document.getElementById('founder-form').classList.add('hidden');
-        document.getElementById('initial-screen').classList.remove('hidden');
-    });
-    document.getElementById('back-to-roles-developer').addEventListener('click', (event) => {
-        event.preventDefault();
-        document.getElementById('developer-form').classList.add('hidden');
-        document.getElementById('initial-screen').classList.remove('hidden');
-    });
     document.getElementById('faunder-confirm-button').addEventListener('click', () => {
         saveProfile('faunder');
     });
     document.getElementById('developer-confirm-button').addEventListener('click', () => {
         saveProfile('developer');
+    });
+    document.getElementById('back-to-roles').addEventListener('click', () => {
+        document.getElementById('founder-form').classList.add('hidden');
+        document.getElementById('initial-screen').classList.remove('hidden');
+    });
+    document.getElementById('back-to-roles-developer').addEventListener('click', () => {
+        document.getElementById('developer-form').classList.add('hidden');
+        document.getElementById('initial-screen').classList.remove('hidden');
+    });
+    document.getElementById('profile-button').addEventListener('click', () => {
+        document.getElementById('main-menu').classList.add('hidden');
+        const role = data.profile === 'faunder' ? 'Фаундер' : 'Разработчик';
+        document.getElementById('role-header').innerText = role;
+        document.getElementById('profile-section').classList.remove('hidden');
+        document.getElementById('header').innerText = role;
+        document.getElementById('return-button-container').classList.remove('hidden');
+    });
+    document.getElementById('return-button').addEventListener('click', () => {
+        document.getElementById('profile-section').classList.add('hidden');
+        document.getElementById('main-menu').classList.remove('hidden');
+        document.getElementById('header').innerText = 'Главное меню';
+        document.getElementById('return-button-container').classList.add('hidden');
     });
 });

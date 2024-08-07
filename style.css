@@ -1,84 +1,100 @@
 body {
-    background-color: rgb(23, 33, 43);
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
-    height: 100vh;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(220, 220, 220);
-    font-family: Arial, sans-serif;
+    height: 100vh;
+    text-align: center;
 }
 
-#app {
-    text-align: center;
+h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-bottom: 1em;
 }
 
 .hidden {
     display: none;
 }
 
-#buttons, #menu-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
+#buttons {
+    margin-top: 20px;
 }
 
 .default-button {
-    background-color: rgb(35,46,60);
-    color: rgb(220, 220, 220);
+    background-color: #4CAF50;
     border: none;
-    padding: 15px 20px;
-    border-radius: 20px;
-    font-size: 20px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
     cursor: pointer;
-    width: 100%;
-    max-width: 300px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.default-button:hover {
+    background-color: #45a049;
 }
 
 .form-field {
-    text-align: left;
-    margin-bottom: 16px;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    margin-bottom: 1em;
 }
 
 .input-field {
-    width: 100%;
-    padding: 12px 25px;
-    border-radius: 16px;
-    border: 2px solid rgb(35,46,60);
-    font-size: 16px;
-    background-color: rgb(35,46,60);
-    color: rgb(220, 220, 220);
-    box-sizing: border-box;
-}
-
-.input-field.error {
-    border-color: rgb(255, 100, 100);
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .checkbox-label {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 16px;
-    color: rgb(220, 220, 220);
-    margin-bottom: 24px;
+}
+
+.checkbox-label input {
+    margin-right: 0.5em;
+}
+
+.error {
+    border-color: red;
 }
 
 .link {
-    color: rgb(60, 72, 88);
-    cursor: pointer;
     text-decoration: none;
+    color: #4CAF50;
 }
 
-#founder-form h4, #developer-form h4 {
-    margin-bottom: 6px;
-    margin-top: 14px;
+.link:hover {
+    text-decoration: underline;
 }
 
-#developer-job-offers {
-    margin-bottom: 24px;
+.return-button {
+    background-color: #f44336;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.return-button:hover {
+    background-color: #da190b;
 }
