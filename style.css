@@ -1,87 +1,85 @@
 body {
-    background-color: rgb(23, 33, 43);
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
-    height: 100vh;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(220, 220, 220);
-    font-family: Arial, sans-serif;
-    overflow: hidden;
+    height: 100vh;
 }
 
 #app {
-    text-align: center;
-    width: 100%;
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .hidden {
     display: none;
 }
 
-#buttons, #menu-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-}
-
-.default-button {
-    background-color: rgb(35,46,60);
-    color: rgb(220, 220, 220);
-    border: none;
-    padding: 15px 20px;
-    border-radius: 20px;
-    font-size: 20px;
-    cursor: pointer;
-    width: 100%;
-    max-width: 300px;
-}
-
-#header {
-    background-color: rgb(35, 46, 60);
-    padding: 20px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    color: rgb(220, 220, 220);
+#loading-screen {
     text-align: center;
 }
 
-#header.highlight {
-    background-color: rgb(220, 200, 20);
-    color: rgb(220, 220, 220);
+#header {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-#header-text {
-    margin: 0;
-    font-size: 24px;
+#initial-screen, #founder-form, #developer-form, #main-menu, #profile-section {
+    text-align: center;
 }
 
-#return-button-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+#buttons, .form-field, #menu-buttons {
+    margin-top: 10px;
     display: flex;
     justify-content: center;
-    padding: 20px;
-    background-color: rgb(35, 46, 60);
-    color: rgb(220, 220, 220);
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-#return-button {
-    background-color: transparent;
-    color: inherit;
+.default-button {
+    background-color: #007bff;
+    color: white;
     border: none;
-    padding: 15px 20px;
-    border-radius: 20px;
-    font-size: 24px;
+    padding: 10px 20px;
     cursor: pointer;
 }
 
-#profile-section {
-    margin-top: 80px;
+.default-button:hover {
+    background-color: #0056b3;
+}
+
+.input-field {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.form-field {
+    margin-top: 20px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.error {
+    border: 1px solid red;
+}
+
+.link {
+    color: #007bff;
+    cursor: pointer;
+}
+
+#return-button-container {
+    text-align: center;
+    margin-top: 20px;
 }

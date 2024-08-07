@@ -109,23 +109,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('founder-button').addEventListener('click', () => {
         document.getElementById('initial-screen').classList.add('hidden');
         document.getElementById('founder-form').classList.remove('hidden');
+        document.getElementById('header-text').innerText = "Анкета Фаундера";
+        document.getElementById('header').classList.remove('hidden');
     });
 
     document.getElementById('developer-button').addEventListener('click', () => {
         document.getElementById('initial-screen').classList.add('hidden');
         document.getElementById('developer-form').classList.remove('hidden');
-    });
-
-    document.getElementById('back-to-roles').addEventListener('click', (event) => {
-        event.preventDefault();
-        document.getElementById('founder-form').classList.add('hidden');
-        document.getElementById('initial-screen').classList.remove('hidden');
-    });
-
-    document.getElementById('back-to-roles-developer').addEventListener('click', (event) => {
-        event.preventDefault();
-        document.getElementById('developer-form').classList.add('hidden');
-        document.getElementById('initial-screen').classList.remove('hidden');
+        document.getElementById('header-text').innerText = "Анкета Разработчика";
+        document.getElementById('header').classList.remove('hidden');
     });
 
     document.getElementById('faunder-confirm-button').addEventListener('click', () => {
@@ -136,31 +128,29 @@ document.addEventListener("DOMContentLoaded", () => {
         saveProfile('developer');
     });
 
-    document.getElementById('profile-button').addEventListener('click', () => {
-        document.getElementById('header-text').innerText = userProfile === 'faunder' ? 'Фаундер' : 'Разработчик';
-        document.getElementById('header').classList.add('highlight');
-        document.getElementById('return-button-container').classList.remove('hidden');
-        document.getElementById('main-menu').classList.add('hidden');
-        document.getElementById('profile-section').classList.remove('hidden');
+    document.getElementById('back-to-roles').addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('founder-form').classList.add('hidden');
+        document.getElementById('initial-screen').classList.remove('hidden');
+        document.getElementById('header').classList.add('hidden');
     });
 
-    document.getElementById('events-button').addEventListener('click', () => {
-        document.getElementById('header-text').innerText = 'Ивенты';
-    });
-
-    document.getElementById('team-search-button').addEventListener('click', () => {
-        document.getElementById('header-text').innerText = 'Поиск команды';
-    });
-
-    document.getElementById('create-broadcast-button').addEventListener('click', () => {
-        document.getElementById('header-text').innerText = 'Создать рассылку';
+    document.getElementById('back-to-roles-developer').addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('developer-form').classList.add('hidden');
+        document.getElementById('initial-screen').classList.remove('hidden');
+        document.getElementById('header').classList.add('hidden');
     });
 
     document.getElementById('return-button').addEventListener('click', () => {
-        document.getElementById('header-text').innerText = 'Главное меню';
-        document.getElementById('header').classList.remove('highlight');
-        document.getElementById('return-button-container').classList.add('hidden');
-        document.getElementById('main-menu').classList.remove('hidden');
         document.getElementById('profile-section').classList.add('hidden');
+        document.getElementById('main-menu').classList.remove('hidden');
+        document.getElementById('return-button-container').classList.add('hidden');
+    });
+
+    document.getElementById('profile-button').addEventListener('click', () => {
+        document.getElementById('main-menu').classList.add('hidden');
+        document.getElementById('profile-section').classList.remove('hidden');
+        document.getElementById('return-button-container').classList.remove('hidden');
     });
 });
