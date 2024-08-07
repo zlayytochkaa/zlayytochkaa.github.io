@@ -8,6 +8,9 @@
 </head>
 <body>
     <div id="app">
+        <div id="header-container">
+            <h1 id="header">Главное меню</h1>
+        </div>
         <div id="loading-screen">
             <h1>Загрузка...</h1>
         </div>
@@ -74,12 +77,9 @@
             <div class="form-field">
                 <button class="default-button" id="developer-confirm-button">Сохранить</button>
             </div>
-            <h4><a href="#" id="back-to-roles-developer" class="link">Вернуться к выбору роли</a></h4>
+            <h4><a href="#" id="back-to-roles-developer" class="link">Вернуться к выбору роли</а></h4>
         </div>
         <div id="main-menu" class="hidden">
-            <div class="header">
-                <h1 id="header-title">Главное меню</h1>
-            </div>
             <div id="menu-buttons">
                 <button class="default-button" id="profile-button">Профиль</button>
                 <button class="default-button">Ивенты</button>
@@ -88,12 +88,10 @@
             </div>
         </div>
         <div id="profile-section" class="hidden">
-            <div class="header">
-                <h1 id="role-header"></h1>
-            </div>
-            <div id="return-button-container" class="header">
-                <button class="return-button" id="return-button">Вернуться</button>
-            </div>
+            <!-- Профильная информация будет здесь -->
+        </div>
+        <div id="return-button-container" class="hidden">
+            <button class="default-button" id="return-button">Вернуться</button>
         </div>
     </div>
     <script src="script.js"></script>
