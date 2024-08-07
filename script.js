@@ -93,12 +93,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('founder-button').addEventListener('click', () => {
         document.getElementById('initial-screen').classList.add('hidden');
         document.getElementById('founder-form').classList.remove('hidden');
-        document.getElementById('header-container').classList.add('hidden'); // Скрыть заголовок
     });
     document.getElementById('developer-button').addEventListener('click', () => {
         document.getElementById('initial-screen').classList.add('hidden');
         document.getElementById('developer-form').classList.remove('hidden');
-        document.getElementById('header-container').classList.add('hidden'); // Скрыть заголовок
     });
     document.getElementById('faunder-confirm-button').addEventListener('click', () => {
         saveProfile('faunder');
@@ -109,18 +107,17 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('back-to-roles').addEventListener('click', () => {
         document.getElementById('founder-form').classList.add('hidden');
         document.getElementById('initial-screen').classList.remove('hidden');
-        document.getElementById('header-container').classList.remove('hidden'); // Показать заголовок
     });
     document.getElementById('back-to-roles-developer').addEventListener('click', () => {
         document.getElementById('developer-form').classList.add('hidden');
         document.getElementById('initial-screen').classList.remove('hidden');
-        document.getElementById('header-container').classList.remove('hidden'); // Показать заголовок
     });
     document.getElementById('profile-button').addEventListener('click', () => {
         document.getElementById('main-menu').classList.add('hidden');
         const role = data.profile === 'faunder' ? 'Фаундер' : 'Разработчик';
-        document.getElementById('header').innerText = role; // Изменить текст на правильную роль
+        document.getElementById('role-header').innerText = role;
         document.getElementById('profile-section').classList.remove('hidden');
+        document.getElementById('header').innerText = role;
         document.getElementById('return-button-container').classList.remove('hidden');
     });
     document.getElementById('return-button').addEventListener('click', () => {
