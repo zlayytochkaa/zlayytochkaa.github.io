@@ -7,71 +7,43 @@ body {
     align-items: center;
     color: rgb(220, 220, 220);
     font-family: Arial, sans-serif;
-    overflow: hidden;
 }
 
 #app {
     text-align: center;
-    width: 100%;
 }
 
 .hidden {
     display: none;
 }
 
-#header-container {
-    background-color: rgb(35, 46, 60);
-    width: 100%;
-    padding: 20px 0;
-    box-sizing: border-box;
-}
-
-#header {
-    margin: 0;
-    color: rgb(220, 220, 220);
-}
-
-#buttons, #menu-buttons, #return-button-container {
+#buttons, #menu-buttons {
     display: flex;
     flex-direction: column;
     gap: 16px;
     align-items: center;
-    width: 100%;
 }
 
 .default-button {
-    background-color: rgb(35, 46, 60);
+    background-color: rgb(35,46,60);
     color: rgb(220, 220, 220);
     border: none;
     padding: 15px 20px;
     border-radius: 20px;
     font-size: 20px;
     cursor: pointer;
-    width: 100%;
-    max-width: 300px;
-}
-
-.return-button {
-    background-color: rgb(35, 46, 60);
-    color: rgb(220, 220, 220);
-    border: none;
-    padding: 15px 20px;
-    border-radius: 20px;
-    font-size: 20px;
-    cursor: pointer;
-    width: 100%;
+    width: 300px;
 }
 
 .form-field {
     text-align: left;
     margin-bottom: 16px;
-    width: 100%;
-    max-width: 300px;
+    width: 300px;
     margin: 0 auto;
 }
 
 .input-field {
-    width: 100%;
+    width: 300px;
     padding: 12px 25px;
     border-radius: 16px;
     border: 2px solid rgb(35,46,60);
@@ -107,4 +79,29 @@ body {
 
 #developer-job-offers {
     margin-bottom: 24px;
+}
+
+.main-menu-header {
+    margin-top: 0;
+    padding: 10px;
+    background-color: rgb(35, 46, 60);
+    color: rgb(220, 220, 220);
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.comeback-button {
+    background-color: rgb(35, 46, 60);
+    color: rgb(220, 220, 220);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }

@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             second: second.value,
             third: third.value,
             fourth: fourth.value,
-            fifth: fifth
+            fifth: fifth.value
         };
         fetch('https://e1da-31-129-105-188.ngrok-free.app/save_profile', {
             method: 'POST',
@@ -112,18 +112,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('developer-form').classList.add('hidden');
         document.getElementById('initial-screen').classList.remove('hidden');
     });
-    document.getElementById('profile-button').addEventListener('click', () => {
+    document.getElementById('open-profile-button').addEventListener('click', () => {
         document.getElementById('main-menu').classList.add('hidden');
-        const role = data.profile === 'faunder' ? 'Фаундер' : 'Разработчик';
-        document.getElementById('header').innerText = role;
-        document.getElementById('profile-section').classList.remove('hidden');
-        document.getElementById('header').innerText = role;
-        document.getElementById('return-button-container').classList.remove('hidden');
-    });
-    document.getElementById('return-button').addEventListener('click', () => {
-        document.getElementById('profile-section').classList.add('hidden');
-        document.getElementById('main-menu').classList.remove('hidden');
-        document.getElementById('header').innerText = 'Главное меню';
-        document.getElementById('return-button-container').classList.add('hidden');
+        document.getElementById('profile-menu').classList.remove('hidden');
     });
 });

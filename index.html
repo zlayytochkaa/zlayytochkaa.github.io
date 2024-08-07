@@ -77,22 +77,18 @@
             <h4><a href="#" id="back-to-roles-developer" class="link">Вернуться к выбору роли</a></h4>
         </div>
         <div id="main-menu" class="hidden">
-            <div id="header-container">
-                <h1 id="header">Главное меню</h1>
-            </div>
+            <h1 class="main-menu-header">Главное меню</h1>
             <div id="menu-buttons">
-                <button class="default-button" id="profile-button">Профиль</button>
-                <button class="default-button">Ивенты</button>
-                <button class="default-button">Поиск команды</button>
+                <button class="default-button" id="open-profile-button">Профиль</button>
+                <button class="default-button" id="open-event-button">Ивенты</button>
+                <button class="default-button" id="open-teams-button">Поиск команды</button>
                 <button class="default-button hidden" id="create-broadcast-button">Создать рассылку</button>
             </div>
         </div>
-        <div id="profile-section" class="hidden">
-            <div id="header-container">
-                <h1 id="role-header"></h1>
-            </div>
-            <div id="return-button-container" class="hidden">
-                <button class="default-button" id="return-button">Вернуться</button>
+        <div id="profile-menu" class="hidden">
+            <h1 class="main-menu-header">Профиль</h1>
+            <div id="menu-buttons">
+                <button class="comeback-button"><h1>Вернуться</h1></button>
             </div>
         </div>
     </div>
